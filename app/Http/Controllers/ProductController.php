@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all()->toArray();
+        $products = Product::all();
 
         return view('product', [
             'products' => $products

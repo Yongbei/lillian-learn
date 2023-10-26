@@ -10,7 +10,7 @@
     <h1>黃郁詠想購買的玩偶清單</h1>
     <ul>
         @foreach ($products as $product)
-            <li>{{ $product['name'] }}</li>
+            <li>{{ $product->name }}</li>
         @endforeach
     </ul>
 </body>
