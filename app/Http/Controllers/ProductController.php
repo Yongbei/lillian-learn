@@ -20,4 +20,13 @@ class ProductController extends Controller
     {
         return view('product.create');
     }
+
+    public function store(Request $request)
+    {
+        Product::create([
+            'name' => $request->product_name
+        ]);
+
+        return redirect()->to('/products');
+    }
 }
