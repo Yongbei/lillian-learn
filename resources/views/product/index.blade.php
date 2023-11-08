@@ -8,9 +8,13 @@
 </head>
 <body>
     <h1>黃郁詠想購買的玩偶清單</h1>
+    <a href="/products/create">建立頁面</a>
+    <a href="https://bitcoin.org/zh_TW/" target="_blank">bitcoin</a>
     <ul>
         @foreach ($products as $product)
-            <li>{{ $product->name }}</li>
+            <li>
+                <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
+            </li>
         @endforeach
     </ul>
 </body>

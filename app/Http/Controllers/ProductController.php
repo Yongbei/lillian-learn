@@ -29,4 +29,15 @@ class ProductController extends Controller
 
         return redirect()->to('/products');
     }
+
+    public function show($id)
+    {
+        $product = Product::find($id);
+
+        // dd($product);
+
+        return view('product.show', [
+            'product' => $product
+        ]);
+    }
 }
