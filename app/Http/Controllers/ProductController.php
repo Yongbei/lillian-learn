@@ -40,4 +40,13 @@ class ProductController extends Controller
             'product' => $product
         ]);
     }
+
+    public function edit($id)
+    {
+        $product = Product::find($id);
+
+        return view('product.edit', [
+            'product' => $product
+        ]);
+    }
 }
