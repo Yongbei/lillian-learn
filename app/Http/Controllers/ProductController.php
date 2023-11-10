@@ -60,4 +60,13 @@ class ProductController extends Controller
 
         return redirect()->to('/products');
     }
+
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+
+        $product->delete();
+
+        return redirect()->to('/products');
+    }
 }

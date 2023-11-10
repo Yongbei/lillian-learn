@@ -14,6 +14,12 @@
         @foreach ($products as $product)
             <li>
                 <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
+                <a href="/products/{{ $product->id }}/edit">修改</a>
+                <form action="/products/{{ $product->id }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" value="刪除">
+                </form>
             </li>
         @endforeach
     </ul>
