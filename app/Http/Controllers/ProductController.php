@@ -49,4 +49,15 @@ class ProductController extends Controller
             'product' => $product
         ]);
     }
+
+    public function update(Request $request, $id)
+    {
+        $product = Product::find($id);
+
+        $product->update([
+            'name' => $request->product_name
+        ]);
+
+        return redirect()->to('/products');
+    }
 }
