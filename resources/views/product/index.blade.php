@@ -9,20 +9,13 @@
 <body>
     <h1>黃郁詠想購買的玩偶清單</h1>
     <a href="/products/create">建立頁面</a>
-    <a href="https://bitcoin.org/zh_TW/" target="_blank">bitcoin</a>
-    <ul>
-        @foreach ($products as $product)
-            <li>
-                <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
-                <a href="/products/{{ $product->id }}/edit">修改</a>
-                <form action="/products/{{ $product->id }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <input type="submit" value="刪除">
-                </form>
-            </li>
-        @endforeach
-    </ul>
+    <a href="https://laravel.com/" target="_blank">Laravel 外部連結</a>
+
+    <form action="/products">
+        <input type="text" name='search' placeholder="搜尋名稱">
+        <input type="submit" value="搜尋">
+    </form>
+
 
     <table style="border: 1px solid black;">
         <tr>
@@ -48,6 +41,24 @@
             </tr>
         @endforeach
     </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ul>
+        @foreach ($products as $product)
+            <li>
+                <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
+                <a href="/products/{{ $product->id }}/edit">修改</a>
+                <form action="/products/{{ $product->id }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <input type="submit" value="刪除">
+                </form>
+            </li>
+        @endforeach
+    </ul>
 
 </body>
 </html>
