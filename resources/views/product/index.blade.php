@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>黃郁詠想購買的玩偶清單</h1>
-    <a href="/products/create">建立頁面</a>
+    <a href="{{ route('products.create') }}">建立頁面</a>
     <a href="https://laravel.com/" target="_blank">Laravel 外部連結</a>
 
     <form action="/products">
@@ -26,13 +26,13 @@
         @foreach ($products as $product)
             <tr>
                 <td style="border: 1px solid black;">
-                    <a href="/products/{{ $product->id }}">{{ $product->name }}</a>
+                    <a href="{{ route('products.show', ['id' => $product->id]) }}">{{ $product->name }}</a>
                 </td>
                 <td style="border: 1px solid black;">
-                    <a href="/products/{{ $product->id }}/edit">修改</a>
+                    <a href="{{ route('products.edit', ['id' => $product->id]) }}">修改</a>
                 </td>
                 <td style="border: 1px solid black;">
-                    <form action="/products/{{ $product->id }}" method="POST">
+                    <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="POST">
                         @method('DELETE')
                         @csrf
                         <input type="submit" value="刪除">

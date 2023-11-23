@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>黃郁詠想購買的玩偶清單 建立</h1>
-    <form action="/products" method="POST">
+    <form action="{{ route('products.store') }}" method="POST">
         @csrf
         <input type="text" name="product_name" placeholder="請輸入產品名稱">
         <input type="submit" value="建立">
