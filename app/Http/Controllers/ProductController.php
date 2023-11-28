@@ -73,4 +73,9 @@ class ProductController extends Controller
 
         return redirect()->to('/products');
     }
+
+    public function passDataTest($id, $name, $sex)
+    {
+        return view('product.pass-data-test', compact('id', 'name', 'sex'));
+    }
 }
