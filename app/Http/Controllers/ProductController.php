@@ -42,8 +42,6 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        // dd($product);
-
         return view('product.show', [
             'product' => $product
         ]);
@@ -69,7 +67,7 @@ class ProductController extends Controller
         // $product->name = $request->product_name;
         // $product->save();
 
-        return redirect()->to('/products');
+        return redirect(route('products.index'));
     }
 
     public function destroy($id)
@@ -78,7 +76,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        return redirect()->to('/products');
+        return redirect()->back();
     }
 
     public function passDataTest($id, $name, $sex)
