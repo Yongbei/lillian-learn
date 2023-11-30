@@ -31,6 +31,10 @@ class ProductController extends Controller
             'name' => $request->product_name
         ]);
 
+        // $product = new Product;
+        // $product->name = $request->product_name;
+        // $product->save();
+
         return redirect()->to('/products');
     }
 
@@ -61,6 +65,9 @@ class ProductController extends Controller
         $product->update([
             'name' => $request->product_name
         ]);
+
+        // $product->name = $request->product_name;
+        // $product->save();
 
         return redirect()->to('/products');
     }
