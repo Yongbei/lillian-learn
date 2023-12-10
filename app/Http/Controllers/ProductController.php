@@ -27,6 +27,10 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+        ]);
+
         Product::create([
             'name' => $request->product_name
         ]);
@@ -58,6 +62,10 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+        ]);
+
         $product = Product::find($id);
 
         $product->update([
