@@ -13,5 +13,12 @@
         <input type="text" name="product_name" placeholder="請輸入產品名稱">
         <input type="submit" value="建立">
     </form>
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
 </body>
 </html>
