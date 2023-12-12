@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -25,11 +26,11 @@ class ProductController extends Controller
         return view('product.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        $request->validate([
-            'product_name' => 'required|max:3',
-        ]);
+        // $request->validate([
+        //     'product_name' => 'required|max:3',
+        // ]);
 
         Product::create([
             'name' => $request->product_name

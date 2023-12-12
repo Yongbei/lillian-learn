@@ -8,13 +8,13 @@ class StoreProductRequest extends FormRequest
 {
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     public function rules()
     {
         return [
-            //
+            'product_name' => 'required|max:3',
         ];
     }
 }
