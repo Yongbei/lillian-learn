@@ -28,12 +28,10 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        // $request->validate([
-        //     'product_name' => 'required|max:3',
-        // ]);
+        $data = $request->validated();
 
         Product::create([
-            'name' => $request->product_name
+            'name' => $data['product_name']
         ]);
 
         // $product = new Product;
