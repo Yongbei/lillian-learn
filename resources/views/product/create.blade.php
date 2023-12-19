@@ -7,6 +7,7 @@
     <title>建立畫面</title>
 </head>
 <body>
+    <a href="{{ route('products.index') }}">回主畫面</a>
     <h1>黃郁詠想購買的玩偶清單 建立</h1>
     <form action="{{ route('products.store') }}" method="POST">
         @csrf

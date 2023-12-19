@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{{ route('products.index') }}">回主畫面</a>
     <h1>{{ $product->name }} 修改畫面</h1>
     <form action="{{ route('products.update', ['id' => $product->id]) }}" method="POST">
         @method('PATCH')

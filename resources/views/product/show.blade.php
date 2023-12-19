@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{{ route('products.index') }}">回主畫面</a>
     <h1>{{ $product->name }} 明細</h1>
     {{-- paragraph 段落 --}}
     <p>姓名: {{ $product->name }}</p>
