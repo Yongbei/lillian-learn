@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>清單</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
     <h1>黃郁詠想購買的玩偶清單</h1>
     <a href="{{ route('products.create') }}">建立頁面</a>
     <a href="https://laravel.com/" target="_blank">Laravel 外部連結</a>
@@ -59,6 +53,4 @@
             </li>
         @endforeach
     </ul>
-
-</body>
-</html>
+@endsection
