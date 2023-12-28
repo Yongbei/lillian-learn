@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', '建立黃郁詠玩偶頁面')
+
 @section('content')
     <a href="{{ route('products.index') }}">回主畫面</a>
     <h1>黃郁詠想購買的玩偶清單 建立</h1>
