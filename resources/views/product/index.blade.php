@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>黃郁詠想購買的玩偶清單</h1>
+    <h1>[主畫面]黃郁詠想購買的玩偶清單</h1>
+    <a href="{{ route('companies.index') }}">管理公司</a>
+    <br>
     <a href="{{ route('products.create') }}">建立頁面</a>
     <a href="https://laravel.com/" target="_blank">Laravel 外部連結</a>
 
