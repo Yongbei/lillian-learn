@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProductRequest;
+use App\Models\Company;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductRequest;
 
 class ProductController extends Controller
 {
@@ -23,15 +24,22 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('product.create');
+        $companies = Company::all();
+
+        return view('product.create', compact('companies'));
     }
 
     public function store(StoreProductRequest $request)
     {
+        // dd(request()->all());
+
         $data = $request->validated();
 
+        // dd($data);
+
         Product::create([
-            'name' => $data['product_name']
+            'name' => $data['product_name'],
+            'company_id' => $data['company_id'],
         ]);
 
         // $product = new Product;
