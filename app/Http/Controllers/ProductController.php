@@ -53,8 +53,11 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
+        $company = Company::find($product->company_id);
+
         return view('product.show', [
-            'product' => $product
+            'product' => $product,
+            'company' => $company,
         ]);
     }
 
