@@ -21,7 +21,7 @@
         假公司(測試用)
         <select name="company_fake_id">
             <option value="1">公司-1</option>
-            <option value="2">公司-2</option>
+            <option value="2" selected>公司-2</option>
             <option value="3">公司-3</option>
             <option value="4">公司-4</option>
         </select>

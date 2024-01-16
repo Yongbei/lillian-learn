@@ -62,8 +62,11 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
+        $companies = Company::all();
+
         return view('product.edit', [
-            'product' => $product
+            'product' => $product,
+            'companies' => $companies,
         ]);
     }
 
@@ -71,12 +74,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'product_name' => 'required',
+            'company_id' => 'required',
         ]);
 
         $product = Product::find($id);
 
         $product->update([
-            'name' => $request->product_name
+            'name' => $request->product_name,
+            'company_id' => $request->company_id,
         ]);
 
         // $product->name = $request->product_name;
